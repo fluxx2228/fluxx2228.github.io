@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "maks-site",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "C:/Users/PC/Projects/maks-site/dev.cmd"],
+      "port": 3000
+    },
+    {
+      "name": "maks-site-static",
+      "runtimeExecutable": "C:/PROGRA~1/nodejs/npx.cmd",
+      "runtimeArgs": ["--yes", "serve", "C:/Users/PC/Projects/maks-site/out", "-l", "4000"],
+      "port": 4000
+    }
+  ]
+}
