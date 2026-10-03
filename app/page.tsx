@@ -45,6 +45,8 @@ const facts = [
   },
 ];
 
+const photos = ["/photos/photo1.jpg", "/photos/photo2.jpg", "/photos/photo3.jpg"];
+
 export default function Home() {
   return (
     <>
@@ -98,6 +100,22 @@ export default function Home() {
                 <p className="text-sm leading-relaxed text-foreground/70">
                   {text}
                 </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {photos.map((src) => (
+              <div
+                key={src}
+                className="aspect-[3/4] overflow-hidden rounded-xl border border-white/10 bg-black/40 backdrop-blur-md"
+              >
+                <img
+                  src={src}
+                  alt="Фото Макса"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
               </div>
             ))}
           </div>
