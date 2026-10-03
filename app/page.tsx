@@ -45,7 +45,11 @@ const facts = [
   },
 ];
 
-const photos = ["/photos/photo1.jpg", "/photos/photo2.jpg", "/photos/photo3.jpg"];
+const photos = [
+  { src: "/photos/photo1.jpg", position: "center" },
+  { src: "/photos/photo2.jpg", position: "center 15%" },
+  { src: "/photos/photo3.jpg", position: "center" },
+];
 
 export default function Home() {
   return (
@@ -105,7 +109,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
-            {photos.map((src) => (
+            {photos.map(({ src, position }) => (
               <div
                 key={src}
                 className="aspect-[3/4] overflow-hidden rounded-xl border border-white/10 bg-black/40 backdrop-blur-md"
@@ -114,6 +118,7 @@ export default function Home() {
                   src={src}
                   alt="Фото Макса"
                   loading="lazy"
+                  style={{ objectPosition: position }}
                   className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
